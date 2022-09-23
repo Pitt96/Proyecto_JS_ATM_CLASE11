@@ -14,6 +14,7 @@ function alerta1(posicion,icono,titulo) {
 
 
 
+/* Crea una clase llamada Usuario. */
 class Usuario {
     constructor(nombre,apellido,pais,dni,email,celular,password) {
         this.nombre = nombre;
@@ -30,6 +31,10 @@ class Usuario {
     }
 }
 
+/**
+ * Crea un nuevo objeto usuario con los valores de las entradas del formulario.
+ * @returns the object usuario.
+ */
 function crearUsuario() {
     let nombre = document.getElementById("nombre_r").value;
     let apellido = document.getElementById("apellido_r").value;
@@ -45,6 +50,10 @@ function crearUsuario() {
 
 
 
+/**
+ * Toma la entrada del usuario, crea un nuevo objeto usuario, y luego empuja ese objeto en un array de
+ * usuarios.
+ */
 function exportarUsuario() {
     let usuario = crearUsuario();
     usuarios=JSON.parse(localStorage.getItem("usuarios")) || [];
@@ -55,10 +64,18 @@ function exportarUsuario() {
 
 function limpiarCampos() {
     document.getElementById("nombre_r").value = "";
+    document.getElementById("apellido_r").value = "";
+    document.getElementById("pais_r").value = "";
+    document.getElementById("dni_r").value = "";
     document.getElementById("email_r").value = "";
+    document.getElementById("celular_r").value = "";
     document.getElementById("contra_r").value = "";
 }
 
+/**
+ * Si hay usuarios en localStorage, entonces comprueba si el usuario existe en localStorage, si lo hace, entonces
+ * establecer el usuario como el usuario actual y redirigir a la página de la plataforma, de lo contrario, mostrar una alerta.
+ */
 function validarUsuario() {
     let email = document.getElementById("email_init").value;
     let password = document.getElementById("contra_init").value;
@@ -78,6 +95,11 @@ function validarUsuario() {
     }
 }
 
+/**
+ * Si hay usuarios en localStorage, comprueba si el correo electrónico ya está registrado. Si lo está, muestra una
+ * alerta. Si no lo está, añade el usuario a localStorage y muestra una alerta. Si no hay usuarios en
+ * localStorage, añadir el usuario a localStorage y mostrar una alerta.
+ */
 function validarRegistro() {
     let email = document.getElementById("email_r").value;
     let cant = localStorage.length;
@@ -98,6 +120,11 @@ function validarRegistro() {
     }
 }
 
+/**
+ * Si el valor de la entrada con el id de nombre_r está vacío, o el valor de la entrada con el id de
+ * email_r está vacío, o el valor de la entrada con el id de contra_r está vacío, entonces alerta al usuario
+ * que todos los campos son obligatorios. En caso contrario, llama a la función validarRegistro().
+ */
 function campoVacio() {
     let nombre = document.getElementById("nombre_r").value;
     let email = document.getElementById("email_r").value;
@@ -109,6 +136,10 @@ function campoVacio() {
     }
 }
 
+/**
+ * Si los campos de correo electrónico y contraseña están vacíos, entonces muestra una alerta. En caso contrario, llame a la función validarUsuario()
+ *.
+ */
 function campoVacioInit() {
     let email = document.getElementById("email_init").value;
     let password = document.getElementById("contra_init").value;
@@ -121,6 +152,7 @@ function campoVacioInit() {
 
 
 
+/* Una función que permite cambiar entre los formularios de inicio de sesión y de registro. */
 const $btnSignIn= document.querySelector('.sign-in-btn'),
       $btnSignUp = document.querySelector('.sign-up-btn'),  
       $signUp = document.querySelector('.sign-up'),

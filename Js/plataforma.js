@@ -16,7 +16,12 @@ function cargarTabla(){
     }
 }
 
-
+function limpiarCampos(){
+    document.getElementById("monto_deposito").value = "";
+    document.getElementById("monto_retiro").value = "";
+    document.getElementById("monto_transferencia").value = "";
+    document.getElementById("email_transferencia").value = "";
+}
 
 
 /**
@@ -45,6 +50,7 @@ function depositos(){
     fila.innerHTML = fila_historial;
     addDatos(fecha_hora, tipo, monto, saldo);
     tabla_historial.appendChild(fila);
+    limpiarCampos();
 }
 
 /**
@@ -65,6 +71,7 @@ function retiros(){
     fila.innerHTML = fila_historial;
     addDatos(fecha_hora, tipo, monto, saldo);
     tabla_historial.appendChild(fila);
+    limpiarCampos();
 }
 
 /**
@@ -122,6 +129,7 @@ function transferencias(){
     } else {
         alert("El email ingresado no existe");
     }
+    limpiarCampos();
 }
 
 /**
