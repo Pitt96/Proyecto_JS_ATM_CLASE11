@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/cabezera.css">
+    <link rel="stylesheet" href="../Css/estilos_plataforma.css">
+    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"><img src="../image/wallet.png" alt=""></a>
+            <a href="#"><p>YARA</p></a>
+        </div>
+    </header>
+    <main class="main_plataforma">
+        <section class="container_header_2">
+            <div class="div1_header_2">
+                <lord-icon id="perfil"
+                            src="https://cdn.lordicon.com/dxjqoygy.json"
+                            trigger="hover"
+                            colors="primary:#121331,secondary:#000000"
+                            style="width:70px;height:70px">
+                </lord-icon>
+                <div>
+                    <h1>Bienvenido <span id="mostrar_nombre"></span> a la Plataforma ATM_YARA</h1>
+                    <div>
+                        <p>SALDO : S/.<span id="mostrar_saldo"></span>.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="div2_header_2">
+                <h2>¿Que deseas hacer?</h2>
+                <div class="container_btn">
+                    <button class="btn" id="btn_deposito">Depositar</button>
+                    <button class="btn" id="btn_retiro">Retirar</button>
+                    <button class="btn" id="btn_transferencia">Transferir</button>
+                </div>
+            </div>
+        </section>
+        <section class="container_cuerpo_operaciones">
+            <div class="container_cuerpo_operaciones_izq">
+                <div class="container_perfil">
+                    <div class="container_perfil_izq">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/dxjqoygy.json"
+                            trigger="hover"
+                            colors="primary:#121331,secondary:#000000"
+                            style="width:180px;height:180px">
+                        </lord-icon>
+                    </div>
+                    <div class="container_perfil_der">
+                        <h3>Perfil</h3>
+                        <p><span class="label">Nombre : </span><span class="label1" id="nombre"></span></p>
+                        <p><span class="label">Apellido : </span ><span class="label1" id="apellido"></span></p>
+                        <p><span class="label">Pais : </span ><span class="label1" id="pais"></span></p>
+                        <p><span class="label">DNI : </span ><span class="label1" id="dni"></span></p>
+                        <p><span class="label">Correo : </span ><span class="label1" id="correo"></span></p>
+                        <p><span class="label">Celular : </span ><span class="label1" id="celular"></span></p>
+                        <input type="button" value="Cerrar Sesion" id="cerrar_sesion">
+                    </div>
+                </div>
+                <div class="container_deposito" id="cuadro_1">
+                    <h2>Depositar</h2>
+                    <div class="container_input">
+                        <input type="text" placeholder="Monto" id="monto_deposito">
+                        <input type="button" value="Depositar" id="btn_depositar">
+                    </div>
+                </div>
+                <div class="container_retiro" id="cuadro_2">
+                    <h2>Retirar</h2>
+                    <div class="container_input">
+                        <input  type="text" placeholder="Monto" id="monto_retiro">
+                        <input  type="button" value="Retirar" id="btn_retirar">
+                    </div>
+                </div>
+                <div class="container_transferir" id="cuadro_3">
+                    <h2>Transferir</h2>
+                    <div class="container_input">
+                        <input type="text" placeholder="Monto" id="monto_transferencia">
+                        <!-- <select name="" id="modo_transferir">
+                            <option value="1">Tipo de Transferencia</option>
+                            <option value="2">Cuenta Yara a Cuenta Yara</option>
+                            <option value="3">Cuenta a tarjeta</option> -->
+                        <input type="email" placeholder="Correo de la persona a transferir" id="email_transferencia">
+                        <input type="button" value="Transferir" id="btn_transferir">
+                    </div>
+                </div>
+            </div>
+            <div class="container_cuerpo_operaciones_der">
+                <h2>Historial de operaciones</h2>
+                <div class="container_tabla">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Transaccion</th>
+                                <th>Valor</th>
+                                <th>Detalle</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla_historial">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../Js/plataforma.js"></script>
+</body>
+</html>

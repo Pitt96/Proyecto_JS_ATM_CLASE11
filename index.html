@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Css/cabezera.css">
+    <link rel="stylesheet" href="./Css/login_registro.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+    <title>ATM_YARA | Inicio</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href=""><img src="./image/wallet.png" alt=""></a>
+            <a href=""><p>YARA</p></a>
+            
+        </div>
+        
+    </header>
+    <main class="main_login">
+        <div class="container-form sign-up">
+            <div class="welcome-back">
+                <div class="message">
+                    <h2>Bienvenido a YaraCoins</h2>
+                    <p>Si ya tienes una cuenta por favor inicia sesion aqui</p>
+                    <button class="sign-up-btn">Iniciar Sesion</button>
+                </div>
+            </div>
+            <form class="formulario" >
+                <h2 class="create-account create-account2">Crear una cuenta</h2>
+                <div class="iconos">
+                    <div class="border-icon">
+                        <i class='bx bxl-instagram'></i>
+                    </div>
+                    <div class="border-icon">
+                        <i class='bx bxl-linkedin' ></i>
+                    </div>
+                    <div class="border-icon">
+                        <i class='bx bxl-facebook-circle' ></i>
+                    </div>
+                </div>
+                <p class="cuenta-gratis">Crear una cuenta gratis</p>
+                <input type="text" placeholder="Nombre" id="nombre_r">
+                <input type="text" placeholder="Apellido" id="apellido_r">
+                <input type="text" placeholder="Pais" id="pais_r">
+                <input type="text" placeholder="DNI" id="dni_r">
+                <input type="email" placeholder="Email" id="email_r">
+                <input type="text" placeholder="Celular" id="celular_r">
+                <input type="password" placeholder="Contraseña" id="contra_r">
+                <input type="button" value="Registrarse" id="registrar_r">
+            </form>
+        </div>
+        <div class="container-form sign-in">
+            <form class="formulario" >
+                <h2 class="create-account">Iniciar Sesion</h2>
+                <div class="iconos">
+                    <div class="border-icon">
+                        <i class='bx bxl-instagram'></i>
+                    </div>
+                    <div class="border-icon">
+                        <i class='bx bxl-linkedin' ></i>
+                    </div>
+                    <div class="border-icon">
+                        <i class='bx bxl-facebook-circle' ></i>
+                    </div>
+                </div>
+                <p class="cuenta-gratis">¿Aun no tienes una cuenta?</p>
+                <input type="email" placeholder="Email" id="email_init">
+                <input type="password" placeholder="Contraseña" id="contra_init">
+                <input type="button" value="Iniciar Sesion" id="iniciar">
+            </form>
+            <div class="welcome-back">
+                <div class="message">
+                    <h2>Bienvenido de nuevo</h2>
+                    <p>Si aun no tienes una cuenta por favor registrese aqui</p>
+                    <button class="sign-in-btn">Registrarse</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./Js/login_formulario.js"></script>
+    
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+</body>
+</html>
