@@ -121,9 +121,10 @@ function transferencias(){
         usuarioEncontrado.tipoOperacion.push("+"+tipo);
         usuarioEncontrado.monto.push(monto);
         for (let i = 0; i < usuarios.length; i++) {
-            if (usuarios[i].email === usuarioEncontrado.email) {
-                usuarios[i] = usuarioEncontrado;
-            }
+            usuarios[i].email === usuarioEncontrado.email?usuarios[i] = usuarioEncontrado:usuarios[i];
+            // if (usuarios[i].email === usuarioEncontrado.email) {
+            //     usuarios[i] = usuarioEncontrado;
+            // }
         }
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
     } else {
@@ -140,9 +141,10 @@ function modificarUsuarios(){
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
     
     for (let i = 0; i < usuarios.length; i++) {
-        if (usuarios[i].email === usuarioActual.email) {
-            usuarios[i] = usuarioActual;
-        }
+        usuarios[i].email === usuarioActual.email?usuarios[i] = usuarioActual:usuarios[i];
+        // if (usuarios[i].email === usuarioActual.email) {
+        //     usuarios[i] = usuarioActual;
+        // }
     }
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }

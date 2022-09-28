@@ -129,11 +129,12 @@ function campoVacio() {
     let nombre = document.getElementById("nombre_r").value;
     let email = document.getElementById("email_r").value;
     let password = document.getElementById("contra_r").value;
-    if (nombre === "" || email === "" || password === "") {
-        alerta1('center','warning','Todos los campos son obligatorios');
-    } else {
-        validarRegistro();
-    }
+    (nombre === "") || (email === "") || (password === "")? alerta1('center','warning','Todos los campos son obligatorios') : validarRegistro();
+    // if (nombre === "" || email === "" || password === "") {
+    //     alerta1('center','warning','Todos los campos son obligatorios');
+    // } else {
+    //     validarRegistro();
+    // }
 }
 
 /**
@@ -143,11 +144,12 @@ function campoVacio() {
 function campoVacioInit() {
     let email = document.getElementById("email_init").value;
     let password = document.getElementById("contra_init").value;
-    if (email === "" || password === "") {
-        alerta1('center','warning','Todos los campos son obligatorios');
-    } else {
-        validarUsuario();
-    }
+    (email === "") || (password === "")? alerta1('center','warning','Todos los campos son obligatorios') : validarUsuario();
+    // if (email === "" || password === "") {
+    //     alerta1('center','warning','Todos los campos son obligatorios');
+    // } else {
+    //     validarUsuario();
+    // }
 }
 
 
