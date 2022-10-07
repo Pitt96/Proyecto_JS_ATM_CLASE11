@@ -1,4 +1,6 @@
 
+
+
 /**
  * Crea una fila para cada elemento de las matrices del objeto usuarioActual, y luego anexa la
  * fila a la tabla. --Para cargar la tabla al iniciar la sesion
@@ -193,13 +195,13 @@ btn_deposito.addEventListener("click", () => {
 btn_retiro.addEventListener("click", () => {
     ocultar();
     container_retiro.classList.remove('aux');
-    
+    temporizador();
 });
 
 btn_transferencia.addEventListener("click", () => {
     ocultar();
     container_transferir.classList.remove('aux');
-    
+    temporizador();
 });
 
 btn_perfil.addEventListener("click", () => {
@@ -218,6 +220,7 @@ btn_perfil.addEventListener("click", () => {
     dni.innerHTML = usuarioActual.dni;
     correo.innerHTML = usuarioActual.email;
     celular.innerHTML = usuarioActual.celular;
+    temporizador();
 });
 
 
@@ -235,20 +238,22 @@ let cerrar_sesion = document.getElementById("cerrar_sesion");
 /* Añadir un listener de eventos a los botones. */
 btn_depositar.addEventListener("click", () => {
     depositos();
+    temporizador();
 });
 
 btn_retirar.addEventListener("click", () => {
     retiros();
+    temporizador();
 });
 
 btn_transferir.addEventListener("click", () => {
     transferencias();
+    temporizador();
 });
 
 cerrar_sesion.addEventListener("click", () => {
     cerrarSesion();
+    temporizador();
 });
-
-
 
 

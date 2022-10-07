@@ -1,3 +1,46 @@
+/* A list of names. */
+
+const lista_nombres=[];
+let tamaño_db=0;
+/**
+ * It returns a promise that resolves to the value of the lista_nombres variable after 400
+ * milliseconds.
+ * @returns A promise.
+ */
+const notificacionUsuarioRegistrado=()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let aux3=0;
+            fetch("./Js/lista_nombres.json").then(response=>response.json())
+            .then(bd=>{
+                //agregar la data a lista_nombres
+                aux3=bd.length;
+            });
+            resolve(aux3);
+        },400);
+    });
+}
+/* Setting the value of the `tamaño_db` variable to the length of the `lista_nombres` array. */
+notificacionUsuarioRegistrado().then(Response=>{
+    tamaño_db=Response;
+});
+
+let contador=0;
+let cont_aux=0;
+
+
+/* A timer that is executed every second. */
+const temporizador = setInterval(() => {
+    contador++;
+    console.log(contador);
+    if (contador === 14){
+        alerta3(tamaño_db);
+        contador=0;
+        cont_aux++;
+        tamaño_db++;
+    }
+}, 1000);
+
 
 /*Alertas personalizadas*/
 function alerta1(posicion,icono,titulo) {
@@ -7,6 +50,40 @@ function alerta1(posicion,icono,titulo) {
         title: titulo,
         showConfirmButton: false,
         timer: 1500,
+    })
+}
+function alerta2(){
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    Toast.fire({
+        icon: 'success',
+        title: 'Ingresando...'
+    })
+}
+function alerta3(cant_usuarios) {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    Toast.fire({
+        icon: 'success',
+        title: "Se han registrado "+cant_usuarios+" usuarios nuevos"
     })
 }
 
@@ -85,8 +162,9 @@ function validarUsuario() {
         let usuarioEncontrado = usuarios.find(usuario => usuario.email === email && usuario.password === password);
         if (usuarioEncontrado) {
             localStorage.setItem("usuarioActual", JSON.stringify(usuarioEncontrado));
-            
-            window.location.href = "../Page/plataforma.html";
+            alerta2();
+            setTimeout(function(){window.location.href = "../Page/plataforma.html";}, 3000);
+            // window.location.href = "../Page/plataforma.html";
         } else {
             alerta1('center','warning','Usuario no registrado');
         }
